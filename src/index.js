@@ -1,9 +1,11 @@
 import g_resources from './resource';
 import cc from './cc';
+// Native Optimize, Not working on web if using this import
+import HelloWorldScene from './HelloWorldScene';
 
 cc.game.onStart = function(){
-    // Import after starting
-    const HelloWorldScene = require('./HelloWorldScene').default;
+    // Web import
+    // const HelloWorldScene = require('./HelloWorldScene').default;
     var sys = cc.sys;
     if(!sys.isNative && document.getElementById("cocosLoading")) //If referenced loading.js, please remove it
         document.body.removeChild(document.getElementById("cocosLoading"));
